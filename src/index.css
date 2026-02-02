@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+  color: white;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+}
+
+.cable-path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  pointer-events: stroke;
+}
+
+.cable-path:hover {
+  stroke-width: 6;
+  filter: brightness(1.3);
+}
+
+.water-flow {
+  animation: waterFlow 2s linear infinite;
+}
+
+@keyframes waterFlow {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.water-flow-animated {
+  animation: waterFlowAnimated 1s linear infinite;
+}
+
+@keyframes waterFlowAnimated {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.water-flow-line {
+  filter: drop-shadow(0 0 4px rgba(6, 182, 212, 0.5));
+}
+
+.component-glow {
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.psu-glow-1 { filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.6)); }
+.psu-glow-2 { filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6)); }
+.psu-glow-3 { filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.6)); }
+
+.dragging {
+  opacity: 0.8;
+  cursor: grabbing;
+}
