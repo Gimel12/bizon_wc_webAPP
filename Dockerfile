@@ -18,6 +18,9 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine AS production
 
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
